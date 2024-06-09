@@ -1,0 +1,5 @@
+tensorflow[and-cuda]
+opencv-python
+matplotlib
+scikit-learn
+pandas
