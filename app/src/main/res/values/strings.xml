@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Capstone</string>
+    <string name="titlePage">AlifLam</string>
+    <string name="name">Nama Lengkap</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="Password">Kata Kunci</string>
+    <string name="confirm_password">Konfirmasi Kata Kunci</string>
+    <string name="have_account">Sudah memiliki akun?</string>
+    <string name="join">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="dont_have_account">Belum memiliki akun?</string>
+    <string name="here_regist">Daftar Disini</string>
+    <string name="splashScreen">SplashScreen</string>
+</resources>
