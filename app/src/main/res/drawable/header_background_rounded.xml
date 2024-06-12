@@ -1,0 +1,14 @@
+<!-- res/drawable/header_background_rounded.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/header_background" />
+    <corners
+        android:bottomLeftRadius="25dp"
+        android:bottomRightRadius="25dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
+    <stroke
+        android:dashGap="@dimen/cardview_compat_inset_shadow"
+        android:width="@dimen/cardview_compat_inset_shadow"
+        android:color="@color/black"
+        />
+</shape>

@@ -11,4 +11,18 @@
     <string name="dont_have_account">Belum memiliki akun?</string>
     <string name="here_regist">Daftar Disini</string>
     <string name="splashScreen">SplashScreen</string>
+
+    <!--  Home Page-->
+    <string name="welcome_text">Hello, Ali!</string>
+    <string name="level_text">Level 3</string>
+    <string name="beginner_text">Beginner</string>
+    <string name="alif">Alif</string>
+    <string name="lam_alif">Lam Alif</string>
+    <string name="ba">Ba</string>
+    <string name="ta">Ta</string>
+    <string name="tsa">Tsa</string>
+    <string name="jim">Jim</string>
+    <string name="start_text">Let\'s Start begin your\nArabic Journey</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

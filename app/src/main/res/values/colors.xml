@@ -12,4 +12,14 @@
     <color name="genoa">#14856A</color>
     <color name="linkBlue">#0000FF</color>
     <color name="grey">#757575</color>
+
+<!-- Home Page-->
+    <color name="background">#004d40</color>
+    <color name="header_background">#149274</color>
+    <color name="button_background">#26a69a</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="container_background_color">#A5CB0D</color>
+    <color name="container_background_color2">#B4B4B4</color>
 </resources>
