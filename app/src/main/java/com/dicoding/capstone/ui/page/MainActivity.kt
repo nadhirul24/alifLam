@@ -11,7 +11,7 @@ import com.dicoding.capstone.R
 
 class MainActivity : AppCompatActivity() {
     // Data dummy untuk item
-    private val itemTexts = arrayOf("Alif", "Lam Alif", "Ta","Tsa","Jim","Ha","Kha","Dal","Djal","Ra","Lam Alif","Sin","Syin","Lam","Lam Alif","Lam")
+    private val itemTexts = arrayOf("Alif", "Lam Alif", "Ta","Tsa","Jim","Ha","Kha","Dal","Djal","Ra","Lam Alif","Sin","Syin","Lam","Lam Alif","Lam","lam","lam","lam","lam","lam","lam","lam","lam","lam","lam","lam")
     private val itemImages = intArrayOf(
         R.drawable.item_image1, R.drawable.item_image2, R.drawable.item_image3,
         R.drawable.item_image4, R.drawable.item_image5, R.drawable.item_image6,
