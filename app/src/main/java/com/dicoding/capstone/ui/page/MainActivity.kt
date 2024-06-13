@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.capstone.R
+import com.dicoding.capstone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     // Data dummy untuk item
@@ -24,9 +25,19 @@ class MainActivity : AppCompatActivity() {
         R.drawable.item_image25, R.drawable.item_image26, R.drawable.item_image27
     )
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //Mengambil username dari intent
+        val username = intent.getStringExtra("username")
+
+        //Mengubah welcomeText and memasukkan username yang sedang login
+        val welcomeText: TextView = findViewById(R.id.welcome_text)
+        welcomeText.text = getString(R.string.welcome_text, username)
 
         // Ambil referensi ke GridLayout dari XML
         val gridLayout = findViewById<GridLayout>(R.id.item)
@@ -68,5 +79,6 @@ class MainActivity : AppCompatActivity() {
             // Tambahkan itemView ke GridLayout
             gridLayout.addView(itemView)
         }
+
     }
 }

@@ -11,9 +11,17 @@
     <string name="dont_have_account">Belum memiliki akun?</string>
     <string name="here_regist">Daftar Disini</string>
     <string name="splashScreen">SplashScreen</string>
+    <string name="home">Home</string>
+    <string name="activity">Activity</string>
+    <string name="profile">Profile</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="profile_btn">Edit Profile</string>
+    <string name="about_btn">Tentang Aplikasi</string>
+    <string name="logout_btn">Keluar</string>
 
     <!--  Home Page-->
-    <string name="welcome_text">Hello, Ali!</string>
+    <string name="welcome_text">Hello, %1$s!</string>
+    <string name="username_profile">%1$s!</string>
     <string name="level_text">Level 3</string>
     <string name="beginner_text">Beginner</string>
     <string name="alif">Alif</string>

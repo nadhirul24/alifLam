@@ -22,4 +22,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="container_background_color">#A5CB0D</color>
     <color name="container_background_color2">#B4B4B4</color>
+    <color name="color_btn_profile">#D9F8F1</color>
 </resources>

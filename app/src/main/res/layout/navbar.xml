@@ -7,28 +7,34 @@
     android:padding="16dp">
 
     <Button
+        android:id="@+id/home_activity"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Home"
+        android:text="@string/home"
         android:drawableTop="@drawable/ic_home"
         android:background="@android:color/transparent"
         android:textColor="@color/black" />
 
     <Button
+        android:id="@+id/activity_fragment"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Activity"
+        android:text="@string/activity"
         android:drawableTop="@drawable/ic_activity"
         android:background="@android:color/transparent"
         android:textColor="@color/black" />
 
     <Button
+        android:id="@+id/profile_fragment"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Profile"
+        android:text="@string/profile"
         android:drawableTop="@drawable/ic_profile"
         android:background="@android:color/transparent"
         android:textColor="@color/black" />

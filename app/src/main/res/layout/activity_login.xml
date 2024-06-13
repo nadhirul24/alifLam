@@ -160,7 +160,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/loginButton"
             android:layout_width="0dp"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_height="50dp"
