@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        //Divided Title Page Color
+        // Divided Title Page Color
         val fullText = "AlifLam"
         val spannable = SpannableString(fullText)
         val colorAlif = ForegroundColorSpan(Color.BLACK)
@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         spannable.setSpan(colorLam, 4, 7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.titlePage.text = spannable
 
-        //Hover Intent Register
+        // Hover Intent Register
         val intentLogin = findViewById<TextView>(R.id.intentLogin)
         val spannableIntent = SpannableString(intentLogin.text)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
@@ -60,17 +60,17 @@ class LoginActivity : AppCompatActivity() {
             loginUser()
         }
 
-        viewModel.loginResult.observe(this){ result ->
-            when(result) {
-                is ResultState.Loading ->{
+        viewModel.loginResult.observe(this) { result ->
+            when (result) {
+                is ResultState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
-                is ResultState.Success ->{
+                is ResultState.Success -> {
                     binding.progressBar.visibility = View.INVISIBLE
                     Toast.makeText(this, result.data, Toast.LENGTH_SHORT).show()
                     mainActivity()
                 }
-                is ResultState.Error ->{
+                is ResultState.Error -> {
                     binding.progressBar.visibility = View.INVISIBLE
                     Toast.makeText(this, result.error, Toast.LENGTH_SHORT).show()
                 }
@@ -83,19 +83,21 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun mainActivity(){
-        val intent = Intent(this,MainActivity::class.java)
+    private fun mainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("username", binding.usernameEditText.text.toString())
         startActivity(intent)
     }
 
-    private fun loginUser(){
+    private fun loginUser() {
         binding.apply {
             val username = binding.usernameEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
 
-            if (username.isNotEmpty() && password.isNotEmpty()){
+            if (username.isNotEmpty() && password.isNotEmpty()) {
                 viewModel.loginUser(username, password)
+            } else {
+                Toast.makeText(this@LoginActivity, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
     }
