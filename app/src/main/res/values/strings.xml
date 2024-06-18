@@ -18,6 +18,9 @@
     <string name="profile_btn">Edit Profile</string>
     <string name="about_btn">Tentang Aplikasi</string>
     <string name="logout_btn">Keluar</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="reset">Reset</string>
 
     <!--  Home Page-->
     <string name="welcome_text">Hello, %1$s!</string>
