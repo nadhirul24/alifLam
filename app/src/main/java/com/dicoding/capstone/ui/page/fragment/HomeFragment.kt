@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
 
         // Atur teks pada welcome_text
         val welcomeTextView = view.findViewById<TextView>(R.id.welcome_text)
-        welcomeTextView.text = getString(R.string.welcome_text, username)
+        welcomeTextView.text = getString(R.string.welcome_text)
 
         val gridLayout = view.findViewById<GridLayout>(R.id.item)
         val numColumns = 2
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
             val itemView: View = inflater.inflate(R.layout.grid_item_layout, gridLayout, false)
 
             val itemImageButton = itemView.findViewById<ImageButton>(R.id.item_image_button)
-            val itemTextView = itemView.findViewById<TextView>(R.id.text_alif)
+            val itemTextView = itemView.findViewById<TextView>(R.id.item_text)
 
             itemImageButton.setImageResource(itemImages[i])
             itemTextView.text = itemTexts[i]
@@ -76,13 +76,5 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    companion object {
-        fun newInstance(username: String): HomeFragment {
-            val fragment = HomeFragment()
-            val args = Bundle()
-            args.putString("username", username)
-            fragment.arguments = args
-            return fragment
-        }
-    }
+
 }

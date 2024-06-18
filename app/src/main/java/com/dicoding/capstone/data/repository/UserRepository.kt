@@ -1,7 +1,11 @@
 package com.dicoding.capstone.data.repository
-
-import com.dicoding.capstone.data.user.User
 import com.google.firebase.firestore.FirebaseFirestore
+
+data class User(
+    var fullname: String = "",
+    var username: String = "",
+    var password: String = "",
+)
 
 class UserRepository {
     private val db = FirebaseFirestore.getInstance()
@@ -20,7 +24,7 @@ class UserRepository {
                                 callback(false, e.message)
                             }
                     } else {
-                        callback(false, "Pengguna sudah ada")
+                        callback(false, "Nama Pengguna Sudah Digunakan")
                     }
                 } else{
                     callback(false, it.exception?.message)

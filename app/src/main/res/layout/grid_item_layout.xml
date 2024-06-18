@@ -16,7 +16,7 @@
         android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/text_alif"
+        android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_image_button"
