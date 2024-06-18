@@ -1,5 +1,6 @@
 package com.dicoding.capstone.ui.page.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.dicoding.capstone.R
 
 class HomeFragment : Fragment() {
+
     // Data dummy untuk item
     private val itemTexts = arrayOf("Alif", "Lam Alif", "Ta", "Tsa", "Jim", "Ha", "Kha", "Dal", "Djal", "Ra", "Lam Alif", "Sin", "Syin", "Lam", "Lam Alif", "Lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam")
     private val itemImages = intArrayOf(
@@ -25,23 +27,16 @@ class HomeFragment : Fragment() {
         R.drawable.item_image25, R.drawable.item_image26, R.drawable.item_image27
     )
 
-    private var username: String? = null // Variabel untuk menyimpan username
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Menerima username dari argument
-        username = arguments?.getString("username")
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        // Atur teks pada welcome_text
-        val welcomeTextView = view.findViewById<TextView>(R.id.welcome_text)
-        welcomeTextView.text = getString(R.string.welcome_text)
+        val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString("username", "")
+        val welcomeTextView = view.findViewById<TextView>(R.id.username_home)
+        welcomeTextView.text = getString(R.string.welcome_text, username)
 
         val gridLayout = view.findViewById<GridLayout>(R.id.item)
         val numColumns = 2
@@ -76,5 +71,9 @@ class HomeFragment : Fragment() {
         return view
     }
 
-
+    companion object {
+        fun newInstance(username: String): HomeFragment {
+            return HomeFragment()
+        }
+    }
 }

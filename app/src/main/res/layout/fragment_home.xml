@@ -25,7 +25,7 @@
             android:contentDescription="@string/profile_image" />
 
         <TextView
-            android:id="@+id/welcome_text"
+            android:id="@+id/username_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -40,7 +40,7 @@
             android:id="@+id/level_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/welcome_text"
+            android:layout_below="@id/username_home"
             android:layout_marginBottom="4dp"
             android:layout_toEndOf="@id/profile_image"
             android:orientation="horizontal">

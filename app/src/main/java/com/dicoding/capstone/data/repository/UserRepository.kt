@@ -1,4 +1,5 @@
 package com.dicoding.capstone.data.repository
+
 import com.google.firebase.firestore.FirebaseFirestore
 
 data class User(
@@ -32,15 +33,18 @@ class UserRepository {
             }
     }
 
-    fun loginUser(username: String, passwod: String, callback: (Boolean, String?) -> Unit){
-        userCollection.whereEqualTo("username", username).whereEqualTo("password", passwod).get()
+    fun loginUser(username: String, password: String, callback: (Boolean, String?, User?) -> Unit){
+        userCollection.whereEqualTo("username", username).whereEqualTo("password", password).get()
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     if (it.result?.isEmpty == false){
-                        callback(true, "Login Berhasil")
+                        val user = it.result?.documents?.first()?.toObject(User::class.java)
+                        callback(true, "Login Berhasil", user)
                     } else {
-                        callback(false, it.exception?.message)
+                        callback(false, "Username atau password salah", null)
                     }
+                } else {
+                    callback(false, it.exception?.message, null)
                 }
             }
     }

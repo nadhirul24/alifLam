@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.capstone.data.repository.ResultState
+import com.dicoding.capstone.data.repository.User
 import com.dicoding.capstone.data.repository.UserRepository
-import com.dicoding.capstone.data.user.User
 
 class RegisterViewModel : ViewModel() {
     private val userRepository = UserRepository()
