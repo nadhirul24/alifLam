@@ -15,7 +15,7 @@
     <string name="activity">Activity</string>
     <string name="profile">Profile</string>
     <string name="profile_image">Profile Image</string>
-    <string name="profile_btn">Edit Profile</string>
+    <string name="profile_btn">Edit Profile Photo</string>
     <string name="about_btn">Tentang Aplikasi</string>
     <string name="logout_btn">Keluar</string>
     <string name="undo">Undo</string>

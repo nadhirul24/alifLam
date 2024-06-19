@@ -6,6 +6,7 @@ data class User(
     var fullname: String = "",
     var username: String = "",
     var password: String = "",
+    var profileImageUrl: String = ""
 )
 
 class UserRepository {
@@ -46,6 +47,44 @@ class UserRepository {
                 } else {
                     callback(false, it.exception?.message, null)
                 }
+            }
+    }
+    fun updateProfileImageUrl(username: String, imageUrl: String, callback: (Boolean, String?) -> Unit) {
+        userCollection.whereEqualTo("username", username)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val document = querySnapshot.documents[0]
+                    document.reference
+                        .update("profileImageUrl", imageUrl)
+                        .addOnSuccessListener {
+                            callback(true, "Image URL updated successfully")
+                        }
+                        .addOnFailureListener { e ->
+                            callback(false, e.message)
+                        }
+                } else {
+                    callback(false, "User not found")
+                }
+            }
+            .addOnFailureListener { e ->
+                callback(false, e.message)
+            }
+    }
+    fun getUser(username: String, callback: (User?) -> Unit) {
+        userCollection.whereEqualTo("username", username)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val document = querySnapshot.documents[0]
+                    val user = document.toObject(User::class.java)
+                    callback(user)
+                } else {
+                    callback(null)
+                }
+            }
+            .addOnFailureListener { e ->
+                callback(null)
             }
     }
 }

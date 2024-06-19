@@ -35,6 +35,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         with(sharedPreferences.edit()) {
             putString("fullname", user.fullname)
             putString("username", user.username)
+            putString("profile_image_url", user.profileImageUrl) // Simpan URL gambar profil
             apply()
         }
     }

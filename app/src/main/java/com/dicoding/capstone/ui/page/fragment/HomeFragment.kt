@@ -7,14 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.dicoding.capstone.R
 
 class HomeFragment : Fragment() {
 
     // Data dummy untuk item
-    private val itemTexts = arrayOf("Alif", "Lam Alif", "Ta", "Tsa", "Jim", "Ha", "Kha", "Dal", "Djal", "Ra", "Lam Alif", "Sin", "Syin", "Lam", "Lam Alif", "Lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam")
+    private val itemTexts = arrayOf(
+        "Alif", "Lam Alif", "Ta", "Tsa", "Jim", "Ha", "Kha", "Dal", "Djal", "Ra",
+        "Lam Alif", "Sin", "Syin", "Lam", "Lam Alif", "Lam", "lam", "lam", "lam",
+        "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam"
+    )
     private val itemImages = intArrayOf(
         R.drawable.item_image1, R.drawable.item_image2, R.drawable.item_image3,
         R.drawable.item_image4, R.drawable.item_image5, R.drawable.item_image6,
@@ -27,24 +33,31 @@ class HomeFragment : Fragment() {
         R.drawable.item_image25, R.drawable.item_image26, R.drawable.item_image27
     )
 
+    private lateinit var username: String
+    private lateinit var profileImageView: ImageView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
-        val username = sharedPreferences.getString("username", "")
+        val sharedPreferences =
+            requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        username = sharedPreferences.getString("username", "") ?: ""
+
         val welcomeTextView = view.findViewById<TextView>(R.id.username_home)
         welcomeTextView.text = getString(R.string.welcome_text, username)
+
+        profileImageView = view.findViewById(R.id.profile_image)
+        loadProfileImage()
 
         val gridLayout = view.findViewById<GridLayout>(R.id.item)
         val numColumns = 2
 
-        // Loop untuk membuat item sesuai dengan jumlah data dummy yang Anda miliki
         for (i in itemTexts.indices) {
-            // Inflate layout item dari XML
-            val itemView: View = inflater.inflate(R.layout.grid_item_layout, gridLayout, false)
+            val itemView: View =
+                inflater.inflate(R.layout.grid_item_layout, gridLayout, false)
 
             val itemImageButton = itemView.findViewById<ImageButton>(R.id.item_image_button)
             val itemTextView = itemView.findViewById<TextView>(R.id.item_text)
@@ -71,9 +84,17 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    companion object {
-        fun newInstance(username: String): HomeFragment {
-            return HomeFragment()
-        }
+    private fun loadProfileImage() {
+        val sharedPreferences =
+            requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val profileImageUrl = sharedPreferences.getString("profile_image_url", "")
+
+        Glide.with(this)
+            .load(profileImageUrl)
+            .placeholder(R.drawable.ic_profile)  // Placeholder image while loading or if URL is empty
+            .error(R.drawable.ic_profile)        // Image to show if loading fails
+            .into(profileImageView)
     }
+
 }
+

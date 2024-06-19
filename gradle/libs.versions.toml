@@ -1,4 +1,5 @@
 [versions]
+glide = "4.16.0"
 agp = "8.3.2"
 kotlin = "1.9.22"
 coreKtx = "1.13.1"
@@ -19,6 +20,7 @@ liveDataKtx = "2.8.2"
 viewModel = "2.8.2"
 
 [libraries]
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 datastore-pref = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastorepref" }

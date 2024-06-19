@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
             when (item.itemId) {
-                R.id.nav_home -> selectedFragment = HomeFragment.newInstance(getUsername())
+                R.id.nav_home -> selectedFragment = HomeFragment()
                 R.id.nav_history -> selectedFragment = HistoryFragment()
                 R.id.nav_profile -> selectedFragment = ProfilFragment()
                 // Tambahkan fragment lain sesuai kebutuhan
@@ -38,7 +38,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getUsername(): String {
-        return intent.getStringExtra("username") ?: ""
-    }
+
 }

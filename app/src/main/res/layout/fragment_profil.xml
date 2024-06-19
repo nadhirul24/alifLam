@@ -18,11 +18,23 @@
             android:id="@+id/profile_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:background="@drawable/rounded_image_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_profile"
             android:contentDescription="@string/profile_image" />
+        <ProgressBar
+            android:id="@+id/loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            style="@android:style/Widget.ProgressBar.Large"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image"
+            app:layout_constraintEnd_toEndOf="@id/profile_image"
+            app:layout_constraintStart_toStartOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="@id/profile_image" />
         <TextView
             android:id="@+id/username_profile"
             android:layout_width="0dp"
