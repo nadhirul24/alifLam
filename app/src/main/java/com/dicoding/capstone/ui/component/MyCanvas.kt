@@ -125,4 +125,12 @@ class MyCanvas(context: Context) : View(context) {
         canvas.drawColor(backgroundColor)
         invalidate()
     }
+    fun setStrokeWidth(width: Float){
+        paint.strokeWidth = width
+        invalidate()
+    }
+
+    fun getBitmap(): Bitmap{
+        return bitmap
+    }
 }

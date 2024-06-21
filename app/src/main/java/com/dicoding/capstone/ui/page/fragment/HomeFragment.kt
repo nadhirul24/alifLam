@@ -1,6 +1,7 @@
 package com.dicoding.capstone.ui.page.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,14 +13,15 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.dicoding.capstone.R
+import com.dicoding.capstone.ui.page.CanvasActivity
 
 class HomeFragment : Fragment() {
 
     // Data dummy untuk item
     private val itemTexts = arrayOf(
-        "Alif", "Lam Alif", "Ta", "Tsa", "Jim", "Ha", "Kha", "Dal", "Djal", "Ra",
-        "Lam Alif", "Sin", "Syin", "Lam", "Lam Alif", "Lam", "lam", "lam", "lam",
-        "lam", "lam", "lam", "lam", "lam", "lam", "lam", "lam"
+        "Alif", "Ba", "Ta", "Tsa", "Jim", "Ha", "Kha", "Dal", "Dzal", "Ra",
+        "Za", "Sin", "Syin", "Shad", "Dhad", "Tha", "Zha", "Ain", "Ghain",
+        "Fa", "Qaf", "Lam", "Mim", "Nun", "Waw", "Ha", "Ya","Lam","Lam"
     )
     private val itemImages = intArrayOf(
         R.drawable.item_image1, R.drawable.item_image2, R.drawable.item_image3,
@@ -30,7 +32,8 @@ class HomeFragment : Fragment() {
         R.drawable.item_image16, R.drawable.item_image17, R.drawable.item_image18,
         R.drawable.item_image19, R.drawable.item_image20, R.drawable.item_image21,
         R.drawable.item_image22, R.drawable.item_image23, R.drawable.item_image24,
-        R.drawable.item_image25, R.drawable.item_image26, R.drawable.item_image27
+        R.drawable.item_image25, R.drawable.item_image26, R.drawable.item_image27,
+        R.drawable.item_image28,R.drawable.item_image28
     )
 
     private lateinit var username: String
@@ -64,6 +67,14 @@ class HomeFragment : Fragment() {
 
             itemImageButton.setImageResource(itemImages[i])
             itemTextView.text = itemTexts[i]
+
+            itemImageButton.setOnClickListener {
+                val intent = Intent(requireActivity(), CanvasActivity::class.java).apply {
+                    putExtra("item_text", itemTexts[i])
+                    putExtra("item_image_res_id", itemImages[i])
+                }
+                startActivity(intent)
+            }
 
             val row = i / numColumns
             val col = i % numColumns

@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="2dp"
                     android:paddingEnd="2dp"
-                    android:text="@string/level_text"
+                    android:text="Level 1"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>

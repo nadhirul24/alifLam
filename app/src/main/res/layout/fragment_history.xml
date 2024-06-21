@@ -1,10 +1,10 @@
+<!-- fragment_history.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.page.fragment.HistoryFragment"
-    >
+    tools:context=".ui.page.fragment.HistoryFragment">
 
     <!-- Header Layout -->
     <RelativeLayout
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="2dp"
                     android:paddingEnd="2dp"
-                    android:text="@string/level_text"
+                    android:text="Level 1"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -97,41 +97,41 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <!-- Content Layout -->
-    <RelativeLayout
-        android:id="@+id/content_layout"
+    <!-- RecyclerView for displaying success list -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
-        android:layout_margin="16dp"
-        android:background="@drawable/container_history_item">
+        android:background="@drawable/container_history_item"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/item_image2" />
+            android:layout_marginRight="16dp"
+            android:src="@drawable/item_image1" />
 
         <TextView
             android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/item_image"
+            android:layout_toRightOf="@id/item_image"
             android:layout_marginTop="16dp"
-            android:text="Lam Alif"
+            android:text="Alif"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-        <Button
+        <TextView
             android:id="@+id/continue_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@color/button_background"
-            android:text="Lanjutkan"
-            android:textColor="@color/white" />
+            android:text="Success"
+            android:textColor="@color/button_background" />
+
     </RelativeLayout>
 
 </RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/title_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About This App"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/backBtn"/>
+
+    <TextView
+        android:id="@+id/description_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Learning to write Arabic poses significant challenges for Indonesian children due to the complex nature of the Arabic script, which differs greatly from the Latin alphabet used in Bahasa Indonesia. The right-to-left writing direction, unique letter shapes, and contextual forms make mastering Arabic writing particularly difficult. Many children in Indonesia lack access to effective learning tools and resources, which exacerbates these difficulties and often leads to frustration and decreased motivation. This situation raises important questions: How can we make learning to write Arabic more accessible and engaging for Indonesian children? What innovative approaches can be taken to simplify the learning process and foster a deeper understanding of the Arabic script?"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/title_about"/>
+
+    <!-- Add additional widgets or text views for more details about the app -->
+
+</RelativeLayout>

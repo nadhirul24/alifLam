@@ -66,6 +66,12 @@ class ProfilFragment : Fragment() {
             intent.type = "image/*"
             selectImageLauncher.launch(intent)
         }
+        val aboutButton = view.findViewById<Button>(R.id.aboutBtn)
+        aboutButton.setOnClickListener {
+            val intent = Intent(requireContext(), AboutActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val logoutButton = view.findViewById<Button>(R.id.logoutBtn)
         logoutButton.setOnClickListener {
@@ -74,6 +80,7 @@ class ProfilFragment : Fragment() {
 
         return view
     }
+
 
     private fun loadProfileImage() {
 

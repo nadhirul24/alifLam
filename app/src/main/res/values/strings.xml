@@ -21,6 +21,9 @@
     <string name="undo">Undo</string>
     <string name="redo">Redo</string>
     <string name="reset">Reset</string>
+    <string name="arabic_name">Huruf Arab</string>
+    <string name="image_arabic">Gambar huruf arab</string>
+    <string name="submit">Check</string>
 
     <!--  Home Page-->
     <string name="welcome_text">Hello, %1$s!</string>
